@@ -1,0 +1,30 @@
+// ==UserScript==
+// @name         ChessDotCom
+// @version      0.1
+// @description  Hide Html
+// @author       You
+// @match        https://www.chess.com/*
+// @grant        GM_addStyle
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    var elements = ["user-tagline-component",
+                   "game-over-player-component",
+                   "game-over-modal-player",
+                   "game-over-rating-component",
+                   "player-avatar",
+                   "user-tagline-compact-row",
+                   "player-row-username",
+                   "player-row-avatar",
+                   "analysis-area-players",
+                   "chat-scroll-area-component",
+                   "archived-games-table",
+                   "stat-section-stats-section",
+                   "notification-toasters"];
+
+    for (var i = 0; i < elements.length; i++) {
+       GM_addStyle('.' + elements[i] + ' { display: none !important; }');
+    }
+})();
